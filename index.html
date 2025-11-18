@@ -16,17 +16,28 @@
       line-height: 1.6;
     }
 
+    /* NAVIGATION */
     nav {
       width: 100%;
-      padding: 16px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-bottom: 1px solid #e5e5e5;
+      padding: 14px 0;
       position: sticky;
       top: 0;
       background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid #e5e5e5;
       backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    /* keeps nav content centered & prevents clipping */
+    .nav-content {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 24px;
     }
 
     nav .title {
@@ -48,6 +59,7 @@
       background: #f2f2f2;
     }
 
+    /* HERO SECTION */
     .hero {
       text-align: center;
       padding: 80px 20px;
@@ -67,6 +79,7 @@
       margin: auto;
     }
 
+    /* PROJECT GRID */
     .projects {
       max-width: 900px;
       margin: 60px auto;
@@ -104,6 +117,7 @@
       color: #666;
     }
 
+    /* FOOTER */
     footer {
       margin-top: 80px;
       padding: 40px;
@@ -112,12 +126,13 @@
       color: #777;
     }
 
+    /* MOBILE FIXES */
     @media(max-width: 600px){
       .hero h1 {
         font-size: 34px;
       }
-      nav {
-        padding: 14px 18px;
+      nav .title {
+        font-size: 18px;
       }
     }
   </style>
@@ -127,10 +142,12 @@
 
   <!-- Navigation -->
   <nav>
-    <div class="title">Seth School Projects</div>
-    <div>
-      <a href="#">GitHub</a>
-      <a href="#">About</a>
+    <div class="nav-content">
+      <div class="title">Seth School Projects</div>
+      <div>
+        <a href="#">GitHub</a>
+        <a href="#">About</a>
+      </div>
     </div>
   </nav>
 
@@ -144,7 +161,7 @@
   <div class="projects">
 
     <!-- Assignment 1 -->
-    <a href="Assignment   1 - Seth Fozz Aguilar/" style="text-decoration:none; color:inherit;">
+    <a href="Assignment 1 - Seth Fozz Aguilar/" style="text-decoration:none; color:inherit;">
       <div class="card">
         <h2>Assignment 1 — Seth Fozz Aguilar</h2>
         <p>Basic HTML/CSS project.</p>
@@ -168,5 +185,3 @@
 
 </body>
 </html>
-
-
