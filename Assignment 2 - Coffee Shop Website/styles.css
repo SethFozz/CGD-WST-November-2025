@@ -1,0 +1,361 @@
+/* styles.css */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  background: #f5f5f7;
+  color: #1d1d1f;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* NAV */
+nav {
+  width: 100%;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(18px);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #d2d2d7;
+  position: fixed;
+  top: -80px; /* Hidden first */
+  left: 0;
+  transition: top 0.35s ease;
+  z-index: 9999;
+}
+
+nav ul {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 14px;
+  opacity: 0.95;
+  transition: 0.2s;
+}
+
+nav a:hover {
+  opacity: 1;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 20px;
+  overflow: hidden;
+}
+
+/* Background video */
+.video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* Dark overlay */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 34px;
+  background: white;
+  color: #1d1d1f;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.cta-btn:hover {
+  background: #e5e5e5;
+}
+
+/* PRODUCT SECTION */
+#product {
+  max-width: 720px;
+  margin: 48px auto 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  background: transparent;
+}
+
+#product h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: #111;
+}
+
+#product p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: #545458;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* GALLERY */
+#gallery {
+  padding: 80px 24px;
+  text-align: center;
+}
+
+#gallery h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+#gallery div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+#gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 5;   /* enforce 4:5 aspect ratio */
+  object-fit: cover;     /* crop to fill */
+  border-radius: 16px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  display: block;
+}
+
+
+
+/* SPACER */
+.spacer {
+  margin-bottom: 20px;
+}
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+  padding: 16px 0;
+}
+.faq-section {
+  background: #f0f0f0;       /* light subtle background */
+  padding: 48px 36px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 60px auto;          /* centers and spacing */
+  color: #111;
+}
+.faq-question {
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  padding-right: 30px;
+  user-select: none;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #007aff;
+}
+
+.faq-question::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+  color: #000000;
+}
+
+.faq-question.active::after {
+  content: "−";
+  transform: translateY(-50%);
+  color: #005bb5;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  font-size: 1rem;
+  color: #333;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.faq-answer.open {
+  max-height: 500px; /* enough to show content */
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  #benefits ul {
+    font-size: 1rem;
+  }
+
+  .stat-item h3 {
+    font-size: 1.5rem;
+  }
+
+  #faq h2 {
+    font-size: 2rem;
+  }
+}
+
+.buy-btn, .home-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 34px;
+  color: #007aff;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.buy-btn, .home-btn:hover{
+
+  text-decoration: underline solid;
+
+
+}
+
+
+#signup {
+  background: #1d1d1f;
+  color: white;
+  padding: 60px 24px;
+  text-align: center;
+}
+
+.signup-container {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#signup h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+#signup p {
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  opacity: 0.85;
+}
+
+#signup-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#signup-form input[type="email"] {
+  flex: 1 1 300px;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+}
+
+#signup-form button {
+  background: white;
+  color: #1d1d1f;
+  border: none;
+  padding: 14px 34px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  flex: 0 0 auto;
+}
+
+#signup-form button:hover {
+  background: #e5e5e5;
+}
+
+@media (max-width: 480px) {
+  #signup-form {
+    flex-direction: column;
+  }
+  #signup-form input[type="email"], 
+  #signup-form button {
+    width: 100%;
+    flex: none;
+  }
+}
+
+#footer {
+  color: #6e6e73; /* A nice neutral gray for Apple-style */
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: center;
+  padding: 40px 24px;
+}
+
+#footer p {
+  margin-top: 10px;
+  color: inherit; /* inherits the footer color */
+}
+
+
