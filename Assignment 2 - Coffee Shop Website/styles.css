@@ -358,4 +358,20 @@ nav a:hover {
   color: inherit; /* inherits the footer color */
 }
 
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* or whatever color */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: 9999;
+}
+#navbar.visible {
+  transform: translateY(0);
+  opacity: 1;
+}
 
