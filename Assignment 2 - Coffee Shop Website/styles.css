@@ -360,18 +360,15 @@ nav a:hover {
 
 #navbar {
   position: fixed;
-  top: 0;
+  top: -80px;  /* hidden above viewport */
   left: 0;
   width: 100%;
-  background-color: white; /* or whatever color */
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  transform: translateY(-100%);
-  opacity: 0;
-  z-index: 9999;
+  transition: top 0.3s ease;  /* smooth transition */
+  /* other styles */
 }
+
 #navbar.visible {
-  transform: translateY(0);
-  opacity: 1;
+  top: 0;  /* when visible, position it at the top */
 }
+
 
